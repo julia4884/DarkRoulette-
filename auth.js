@@ -42,22 +42,22 @@ router.post('/register', async (req, res) => {
 
   db.run(
   'INSERT INTO users (email, username, password) VALUES (?, ?, ?)',
-    [email, username, hashedPassword],
-    (err) => {
-      if (err) {
-        return res.status(400).send('User already exists or invalid data.');
-      }
-      res.status(200).send('Registration successful.');
+  [email, username, hashedPassword],
+  (err) => {
+    if (err) {
+      return res.status(400).send('User already exists or invalid data.');
     }
-  );
+    res.status(200).send('Registration successful.');
+  }
+);
 });
 
 // Логин
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
 
-  db.get(\`SELECT * FROM users WHERE email = ?\`, [email], async (err, user) => {
-    if (err || !user) return res.status(400).send('User not found.');
+  db.get('SELECT * FROM users WHERE email = ?', [email], async (err, user) => {
+  if (err || !user) return res.status(400).send('User not found.');
 
     const valid = await bcrypt.compare(password, user.password);
     if (!valid) return res.status(401).send('Invalid password.');
