@@ -1,4 +1,4 @@
-const express = require("express");
+хconst express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const paypal = require("paypal-rest-sdk");
@@ -37,6 +37,16 @@ app.get("/api/check", (req, res) => {
   });
 });
 
+app.get("/api/check", (req, res) => {
+  const email = req.query.email;
+  db.get("SELECT * FROM vip WHERE email = ?", [email], (err, row) => {
+    if (row) res.json({ status: "VIP", type: row.type });
+    else res.json({ status: "FREE" });
+  });
+});
+app.get("/", (req, res) => {
+  res.send("DarkRoulette API is alive 🕷️ Welcome to the abyss.");
+});
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Dark server has risen on port ${PORT}`);
