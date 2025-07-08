@@ -1,22 +1,67 @@
 body {
   background: black;
   color: hotpink;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
+
+#smoke {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
 video {
   width: 45%;
   margin: 5px;
   border: 3px solid hotpink;
   border-radius: 20px;
 }
+
 #text-chat {
   margin-top: 20px;
 }
+
 #message-input {
   padding: 10px;
   border-radius: 10px;
+  border: none;
+  width: 60%;
+  font-size: 16px;
 }
+
 #status-bar {
   margin-top: 10px;
+  font-size: 14px;
+}
+
+#status-bar span {
+  margin: 0 10px;
+}
+
+#report-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #ff1493;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#agree-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: hotpink;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
