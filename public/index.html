@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DarkRoulette</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <div id="age-check">
+    <h2>Privacy Policy & Age Verification</h2>
+    <button id="agree-btn">I Agree</button>
+  </div>
+  <div id="camera-check" style="display:none;">
+    <video id="video" autoplay muted playsinline></video>
+    <p>Verifying age via camera...</p>
+  </div>
+  <div id="chat-interface" style="display:none;">
+    <h1>DarkRoulette</h1>
+    <div id="video-chat">
+      <video id="localVideo" autoplay muted playsinline></video>
+      <video id="remoteVideo" autoplay playsinline></video>
+    </div>
+    <div id="text-chat">
+      <ul id="messages"></ul>
+      <input type="text" id="message-input" placeholder="Type a message..."/>
+    </div>
+    <div id="status-bar">
+      <span id="country-flag"></span>
+      <span id="vip-status">Free User</span>
+      <span id="timer">00:00</span>
+    </div>
+    <button id="report-btn">Send to Abyss</button>
+  </div>
+</body>
+</html>
