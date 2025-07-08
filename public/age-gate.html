@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DarkRoulette - Age Gate</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/smoke.js"></script>
+</head>
+<body class="age-gate">
+  <div class="smoke-background"></div>
+  <div class="age-content">
+    <h1>DarkRoulette</h1>
+    <button onclick="agree()" class="btn">I Agree to Privacy Policy</button>
+    <button onclick="enterSite()" class="btn">Yes, I am 18+</button>
+  </div>
+  <script>
+    function agree() {
+      alert('Privacy policy accepted.');
+    }
+    function enterSite() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
