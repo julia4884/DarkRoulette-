@@ -8,6 +8,8 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+const authRoutes = require('./auth');
+app.use('/api', authRoutes);
 
 paypal.configure({
   mode: "sandbox",
