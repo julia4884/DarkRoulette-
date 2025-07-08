@@ -17,6 +17,38 @@ async function startVideo() {
   }, 3000);
 }
 
+async function saveVIP(email, type) {
+  try {
+    const res = await fetch("https://darkroulette.onrender.com/api/pay", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, type })
+    });
+
+    if (res.ok) {
+      console.log("VIP saved");
+    } else {
+      console.error("Failed to save VIP");
+    }
+  } catch (err) {
+    console.error("Network error:", err);
+  }
+}
+
+async function checkVIP(email) {
+  try {
+    const res = await fetch(`https://darkroulette.onrender.com/api/check?email=${encodeURIComponent(email)}`);
+    const data = await res.json();
+
+    if (data.status === "VIP") {
+      console.log("User is VIP:", data.type);
+    } else {
+      console.log("User is FREE");
+    }
+  } catch (err) {
+    console.error("Check failed:", err);
+  }
+}
 function startChat() {
   // PeerJS, socket.io, etc.
   console.log("Chat started.");
