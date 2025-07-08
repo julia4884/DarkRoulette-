@@ -10,6 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 const authRoutes = require('./auth');
 app.use('/api', authRoutes);
+app.use(express.static("public"));
 
 paypal.configure({
   mode: "sandbox",
