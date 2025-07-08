@@ -21,14 +21,14 @@ app.use(session({
 
 // Инициализация базы данных
 db.serialize(() => {
-  db.run(\`
-    CREATE TABLE IF NOT EXISTS users (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      email TEXT UNIQUE,
-      username TEXT UNIQUE,
-      password TEXT
-    )
-  \`);
+  db.run(`
+  CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT UNIQUE,
+    username TEXT UNIQUE,
+    password TEXT
+  )
+`);
 });
 
 // Регистрация
