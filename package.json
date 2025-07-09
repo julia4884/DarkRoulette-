@@ -1,7 +1,7 @@
 {
   "name": "darkroulette",
   "version": "1.0.0",
-  "description": "DarkRoulette - \u0432\u0438\u0434\u0435\u043e\u0447\u0430\u0442 \u0441 VIP \u0438 AI",
+  "description": "DarkRoulette - anonymous video chat with VIP room",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -12,7 +12,7 @@
     "sqlite3": "^5.1.6",
     "paypal-rest-sdk": "^1.8.1",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
     "bcryptjs": "^2.4.3"
   }
 }
